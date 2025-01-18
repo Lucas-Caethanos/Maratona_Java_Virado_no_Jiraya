@@ -1,16 +1,18 @@
 package E_OrientacaoObjetos.L_ClassesAbstratas.Dominio;
 
-public abstract class Funcionario extends Pessoa{
+// Classe abstrata Funcionario que herda de Pessoa. Funciona como um molde para subclasses.
+public abstract class Funcionario extends Pessoa {
     protected String nome;
     protected double salario;
 
+    // Construtor que inicializa o nome e o salário do funcionário e chama o método_ calculaBonus.
     public Funcionario(String nome, double salario) {
         this.nome = nome;
         this.salario = salario;
-        calculaBonus();
+        calculaBonus(); // Chama o método_ calculaBonus, que deve ser implementado pelas subclasses.
     }
 
-    //O toString também foi herdado pelas subclasses.
+    // O toString foi herdado pelas subclasses e sobrescrito aqui para fornecer uma representação detalhada do Funcionario.
     @Override
     public String toString() {
         return "Funcionario{" +
@@ -19,10 +21,6 @@ public abstract class Funcionario extends Pessoa{
                 '}';
     }
 
-//    public void calculaBonus(){
-//        this.salario = salario + salario * 0.1;
-//    }
-
-    //Forçando todas as subclasses a sobrescreverem o método calculaBonus
+    // Método_ abstrato que obriga todas as subclasses a implementarem sua própria lógica de cálculo de bônus.
     public abstract void calculaBonus();
 }
